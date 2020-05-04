@@ -22,18 +22,21 @@ with open('data/New Sample_Companies_19h30.csv', 'r') as f:
     for row in reader:
        listOfStartUps.append(StartUp(row[0], row[1], row[2], row[3], row[4]))
 
-startUp = listOfStartUps[0]
+startUp = listOfStartUps[97]
 
-searchUrl = "http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&u=%2Fnetahtml%2FPTO%2Fsearch-adv.htm&r=0&p=1&f=S&l=50&Query=AN%2Fopenx&d=PTXT"
+
+
+searchUrl = "http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&u=%2Fnetahtml%2FPTO%2Fsearch-adv.htm&r=0&p=1&f=S&l=50&Query=AN%2F"+startUp.name+"&d=PTXT"
 
 options = Options()
 options.headless = True
 driver = webdriver.Firefox(options=options, executable_path=r'C:\Users\User\Downloads\geckodriver-v0.26.0-win64\geckodriver.exe')
 driver.get(searchUrl)
-
+regex = re.compile("http://patft.*"+startUp.name)
 elems = driver.find_elements_by_xpath("//a[@href]")
 for elem in elems:
-    print(elem.get_attribute("href"))
+    if regex.fullmatch(elem.get_attribute("href")):
+        print(elem.get_attribute("href"))
 
 
 
