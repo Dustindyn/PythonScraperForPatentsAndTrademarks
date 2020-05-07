@@ -1,5 +1,6 @@
 import csv
 import re
+import sys
 
 from selenium.webdriver.firefox.options import Options
 from selenium import webdriver
@@ -12,7 +13,11 @@ class StartUp:
         self.category_group_list = category_group_list
         self.uid = uid
 
-
+class errorLog:
+    def __init__(self, name, url, exception):
+        self.name = name
+        self.url = url
+        self.exception = exception
 
 startUps = []
 
@@ -29,19 +34,18 @@ entries = []
 options = Options()
 options.headless = True
 driver = webdriver.Firefox(options=options, executable_path=r'C:\Users\User\Downloads\geckodriver-v0.26.0-win64\geckodriver.exe')
-
+fails = []
 
 
 for startUp in startUps:
-    searchUrl = "http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&u=%2Fnetahtml%2FPTO%2Fsearch-adv.htm&r=0&p=1&f=S&l=50&Query=AN%2F" + startUp.name.replace(" ", "+") + "&d=PTXT"
+    print('Beginne Bearbeitung für ' + startUp.name)
+    searchUrl = "http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&u=%2Fnetahtml%2FPTO%2Fsearch-adv.htm&r=0&p=1&f=S&l=50&Query=AN%2F\"" + startUp.name.replace(" ", "+") + "\"&d=PTXT"
     regex = re.compile("http://patft.*" + startUp.name)
     try:
         driver.get(searchUrl)
     except:
-        print("*****************************************************************")
-        print(searchUrl)
-        print("*****************************************************************")
-        continue
+        error = errorLog(startUp.name, searchUrl, sys.exc_info()[0])
+        fails.append(error)
     elems = driver.find_elements_by_xpath("//a[@href]")
 
     for elem in elems:
@@ -54,12 +58,13 @@ for startUp in startUps:
 
 keys = entries[0].keys()
 driver.quit()
-with open('patents.csv', 'wb') as output_file:
+with open('firstResult(NoFails).csv', 'w') as output_file:
     dict_writer = csv.DictWriter(output_file, keys)
     dict_writer.writeheader()
     dict_writer.writerows(entries)
-
-
-
-
+keys = fails[0].keys()
+with open('fails.csv', 'w') as f:
+    dict_writer = csv.DictWriter(f, keys)
+    dict_writer.writeheader()
+    dict_writer.writerows(fails)
 
