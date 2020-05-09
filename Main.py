@@ -5,6 +5,7 @@ import sys
 from selenium.webdriver.firefox.options import Options
 from selenium import webdriver
 
+
 class StartUp:
     def __init__(self, name, domain, category_list, category_group_list, uid):
         self.name = name
@@ -13,11 +14,13 @@ class StartUp:
         self.category_group_list = category_group_list
         self.uid = uid
 
-class errorLog:
+
+class ErrorLog:
     def __init__(self, name, url, exception):
         self.name = name
         self.url = url
         self.exception = exception
+
 
 startUps = []
 
@@ -28,23 +31,20 @@ with open('data/New Sample_Companies_19h30.csv', 'r') as f:
 
 del startUps[0]
 
-
-
 entries = []
 options = Options()
 options.headless = True
 driver = webdriver.Firefox(options=options, executable_path=r'C:\Users\User\Downloads\geckodriver-v0.26.0-win64\geckodriver.exe')
 fails = []
 
-
 for startUp in startUps:
     print('Beginne Bearbeitung für ' + startUp.name)
     searchUrl = "http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&u=%2Fnetahtml%2FPTO%2Fsearch-adv.htm&r=0&p=1&f=S&l=50&Query=AN%2F\"" + startUp.name.replace(" ", "+") + "\"&d=PTXT"
-    regex = re.compile("http://patft.*" + startUp.name)
+    regex = re.compile("http://patft.*" + startUp.name + "%22")
     try:
         driver.get(searchUrl)
     except:
-        error = errorLog(startUp.name, searchUrl, sys.exc_info()[0])
+        error = ErrorLog(startUp.name, searchUrl, sys.exc_info()[0])
         fails.append(error)
     elems = driver.find_elements_by_xpath("//a[@href]")
 
@@ -52,9 +52,22 @@ for startUp in startUps:
         if regex.fullmatch(elem.get_attribute("href")):
             entry = {
                 'Company': startUp.name,
-                'Patent Url': elem.get_attribute("href")
+                'Patent Url': elem.get_attribute("href"),
+                'Type': 'Patent'
             }
             entries.append(entry)
+
+#hier Trademarks
+tmUrl = "http://tess2.uspto.gov/"
+searchLinkSelector = 'body > center > table:nth-child(1) > tbody > tr:nth-child(2) > td > font > font > a'
+searchLink = driver.find_element_by_css_selector(searchLinkSelector)
+searchLink.click()
+searchBarSelector = '#querytext > input[type=text]'
+searchBar = driver.find_element_by_css_selector(searchBarSelector)
+searchBar.send_keys(startUps[0])
+
+
+
 
 keys = entries[0].keys()
 driver.quit()

@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31c09d6b-5dfd-428c-895c-8b85ca59e1e3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/firstResult(NoFails).csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstResult(NoFails).csv" beforeDir="false" afterPath="$PROJECT_DIR$/firstResult(NoFails).csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/geckodriver.log" beforeDir="false" afterPath="$PROJECT_DIR$/geckodriver.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588607083087</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="better logging of errors, refined the Url for the drivers html requests">
+      <created>1588872507715</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1588872507715</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -101,53 +108,56 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Added regex to identify links pointing at patents" />
     <MESSAGE value="Added looping through StartUps and generated an output-csv, yet to be tested" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added looping through StartUps and generated an output-csv, yet to be tested" />
+    <MESSAGE value="better logging of errors, refined the Url for the drivers html requests" />
+    <option name="LAST_COMMIT_MESSAGE" value="better logging of errors, refined the Url for the drivers html requests" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2654" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588853969976">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2654" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588853969976" />
-    <state x="2610" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588865346015">
+    <state x="2610" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588880395786">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2610" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588865346015" />
-    <state x="579" y="114" key="CommitChangelistDialog2" timestamp="1588607080533">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2610" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588880395786" />
+    <state x="2499" y="114" key="CommitChangelistDialog2" timestamp="1588872503840">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="2499" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588872503840" />
     <state x="579" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1588607080533" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1588872460551">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1588946853104">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588870769750" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588872460551" />
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588946853104" />
     <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588607420087" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1588872460551">
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1588946853103">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588870769749" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588872460551" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588946853103" />
     <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588607420086" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1588872460551">
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1588946853103">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588870769749" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588872460551" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588946853103" />
     <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588607420086" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1588872460551">
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1588946853104">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588870769750" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588872460551" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588946853104" />
     <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588607420086" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1588507163127">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588507163127" />
-    <state x="655" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1588842635264">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2575" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1589015077923">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="655" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588842635264" />
+    <state x="2575" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589015077923" />
     <state x="655" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588606277133" />
   </component>
 </project>
